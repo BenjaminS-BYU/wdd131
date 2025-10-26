@@ -22,10 +22,10 @@ html, body {
 header {
     background-color: var(--bg-color-two);
     color: var(--text-color);
-    padding: 3rem;
 }
 
 h1 {
+    padding: 1rem;
     margin-bottom: 3rem;
 }
 

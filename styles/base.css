@@ -45,7 +45,7 @@ main {
   flex: 1; /* takes available space */
 }
 
-span {
+#course-title {
     color: var(--text-color);
     text-align: center;
     margin: 20px 0;

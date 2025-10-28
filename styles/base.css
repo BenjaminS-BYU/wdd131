@@ -31,6 +31,14 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  font-family: 'Josefin Sans', sans-serif;
+}
+h1, h2, h3 {
+    font-family: 'Recoleta', serif;
+}
+
+p {
+    font-family: 'Libre Baskerville', serif;
 }
 
 main {
@@ -43,7 +51,7 @@ header {
     justify-content: center;
 }
 
-h1, span{
+h1, .course-title{
     color: var(--text-color);
     text-align: center;
     margin: 20px 0;

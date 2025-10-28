@@ -45,13 +45,23 @@ main {
   flex: 1; /* takes available space */
 }
 
+span {
+    color: var(--text-color);
+    text-align: center;
+    margin: 20px 0;
+    background-color: var(--primary-dark);
+    padding: 15px;
+    margin: 0;
+    font-size: xx-large;
+}
+
 header {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
 
-h1, .course-title{
+h1 {
     color: var(--text-color);
     text-align: center;
     margin: 20px 0;

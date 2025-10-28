@@ -23,6 +23,19 @@
   --shadow-md: 0 3px 8px rgba(0,0,0,0.6);
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* takes available space */
+}
 
 header {
     display: flex;
@@ -30,7 +43,7 @@ header {
     justify-content: center;
 }
 
-h1 {
+h1, span{
     color: var(--text-color);
     text-align: center;
     margin: 20px 0;
@@ -40,6 +53,9 @@ h1 {
 }
 .name h1 {
     color: var(--alt-text-color);
+}
+.name {
+    grid-column: 1 / span 2;
 }
 
 nav ul {
@@ -58,6 +74,12 @@ nav a {
     font-weight: bold;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+
 .card {
     display: flex;
     box-shadow: var(--shadow-md);
@@ -66,8 +88,9 @@ nav a {
     padding: 15px;
     background-color: var(--bg-alt-color);
     margin: 15px 15px;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     flex: 1;
+    max-height: min-content;
 }
 
 .card div {
@@ -129,42 +152,43 @@ nav a {
 }
 
 .location {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 1rem;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 2fr) 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
 }
 
 .location h3 {
-  grid-column: 1 / span 2;
-  border-bottom: 2px solid var(--primary-color);
-  margin: 0 0 10px;
-  text-align: center;
-  padding-bottom: 5px;
+    grid-column: 1 / span 2;
+    border-bottom: 2px solid var(--primary-color);
+    margin: 0 0 10px;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
 .location p {
-  grid-column: 2 / 2;
-  line-height: 1.7;
-  text-align: left;
-  margin: 0;
-  font-size: 1.1rem;
+    grid-column: 2 / 3;
+    line-height: 1.7;
+    text-align: left;
+    margin: 0;
+    font-size: 1.1rem;
+    padding: 1em;
 }
 
 .location figure {
-  grid-column: 1 / 2;
-  grid-row: 2;
-  margin: 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+    grid-column: 1 / 2;
+    grid-row: 2;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 
 main {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    grid-template-rows: .5fr 10fr;
 }
 
 footer {

@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-light: #cce4ff;
+    --blue: #3399ff;
+    --blue-dark: #0052cc;
+    --text-color: #333333;
+    --background-color: #ffffff;
+}
+
+header {
+    
+}
+
+main {
+
+}
+
+footer {
+
+}

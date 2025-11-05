@@ -1,0 +1,33 @@
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+@media(min-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header nav {
+        display: block;
+    }
+    header .menu-toggle {
+        display: none;
+    }
+    header img {
+        display: none;
+    }
+    
+}
+
+@media(min-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

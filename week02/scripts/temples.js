@@ -1,5 +1,13 @@
-const currentYear = new Date().getFullYear();
-document.getElementById("copyright").innerHTML = `&copy; ${currentYear} | Benjamin Strong | Canada`;
-document.getElementById("lastModified").innerHTML = `Last Modified: ${document.lastModified}`;
+const year = new Date().getFullYear();
+document.querySelector("#copyright").innerHTML =
+  `© ${year} | Benjamin Strong | Canada`;
+document.querySelector("#lastModified").textContent =
+  `Last Modified: ${document.lastModified}`;
 
+const nav = document.querySelector(".navigation");
+const btn = document.querySelector("#menu");
 
+btn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+    btn.classList.toggle("show-x");
+})

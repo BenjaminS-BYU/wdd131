@@ -14,8 +14,9 @@ nav ul li a {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
-    header nav {
-        display: block;
+    .navigation {
+        display: flex;
+        font-size: larger;
     }
     header .menu-toggle {
         display: none;

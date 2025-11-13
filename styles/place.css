@@ -31,7 +31,7 @@ header, footer {
 }
 
 footer .emoticon::after {
-  content: " 😊"; /* pseudo-element emoticon for wide screens */
+  content: " 😎"; /* pseudo-element emoticon for wide screens */
   display: inline-block;
 }
 

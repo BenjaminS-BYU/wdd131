@@ -1,3 +1,4 @@
+/* RESET & VARIABLES */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 }
 
 :root {
-    --blue-light: #cce4ff;
+    --blue-light: #cce4ff93;
     --blue: #3399ff;
     --blue-purple: #3c007b;
     --text-color: #ffffff;
@@ -14,15 +15,17 @@
     --black-text: #000000;
 }
 
+/* BODY */
 body {
     background-color: var(--background-color);
     color: var(--black-text);
-    min-width: 320px;
+    min-width: 530px;
     line-height: 1.5;
 }
 
 /* HEADER */
 header {
+    position: relative;
     background-color: var(--blue-purple);
     color: var(--text-color);
     padding: 1.2rem;
@@ -31,47 +34,75 @@ header {
     align-items: center;
 }
 
-/* HAMBURGER */
-#menu::before {
-    content: "≡";
-    font-size: 3rem;
+header h1 {
+    font-size: 2.5rem;
+}
+
+#menu {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
     cursor: pointer;
+    z-index: 1000;
 }
 
-#menu.show-x::before {
-    content: "";
+#menu:focus {
+    outline: none;
 }
 
-#menu.show-x::after {
-    content: "X";
-    font-size: 3rem;
-}
+/* NAVIGATION */
 
-/* NAV */
-nav ul {
+.navigation {
     list-style: none;
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: var(--blue-purple);
-    width: 100%;
-    padding: 1rem;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0.5rem 0;
 }
 
-.navigation.show {
-    display: flex;
-}
-
-nav ul li a {
+.navigation li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-align: center;
 }
+
+.navigation li a:hover {
+    background-color: #ffffff33;
+    border-radius: 4px;
+}
+
+.navigation.show {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0rem;
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+    width: 100%;
+}
+
 
 /* GALLERY */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--blue-light);
 }
 
 .gallery {
@@ -81,6 +112,30 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+}
+
+h2 {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+img {
+    border-radius: 8px;
+    box-shadow: #00000033 0px 4px 8px;
+    transition: 1s;
+    padding: 1rem;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: #00000066 0px 8px 16px;
 }
 
 /* FOOTER */

@@ -9,8 +9,13 @@ const btn = document.querySelector("#menu");
 
 btn.addEventListener("click", () => {
     nav.classList.toggle("show");
-    btn.classList.toggle("show-x");
-})
+    btn.textContent = btn.textContent === "≡" ? "X" : "≡";
+});
+
+// Optional: show last modified date in footer
+const lastModified = document.querySelector("#lastModified");
+lastModified.textContent = `Last Modified: ${document.lastModified}`;
+
 
 const temples = [
   {

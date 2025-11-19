@@ -21,6 +21,7 @@ body {
     line-height: 1.5;
 }
 
+/* HEADER */
 header {
     background-color: var(--blue-purple);
     color: var(--text-color);
@@ -30,27 +31,43 @@ header {
     align-items: center;
 }
 
-header h1 {
-    font-size: 2rem;
-}
-
-header img {
-    filter: invert();
+/* HAMBURGER */
+#menu::before {
+    content: "≡";
+    font-size: 3rem;
     cursor: pointer;
-    transition: .5s;
-    z-index: 1000;
 }
 
-header img:hover {
-    background-color: #ffffff;
-    filter: invert(20%);
-    border-radius: 4px;
+#menu.show-x::before {
+    content: "";
 }
 
-.navigation {
+#menu.show-x::after {
+    content: "X";
+    font-size: 3rem;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
     display: none;
+    flex-direction: column;
+    background-color: var(--blue-purple);
+    width: 100%;
+    padding: 1rem;
 }
 
+.navigation.show {
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* GALLERY */
 main {
     display: flex;
     flex-direction: column;
@@ -66,41 +83,12 @@ main {
     gap: 1rem;
 }
 
-.gallery figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-}
-
+/* FOOTER */
 footer {
     background-color: var(--blue-purple);
     color: var(--text-color);
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.show {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
     padding: 1rem;
-    font-size: 2em;
-    background-color: var(--blue-purple);
-    border-radius: 1rem;
 }
-
-#menu::before {
-	content: "≡";
-}
-
-#menu.show-x::before {
-    content: "X";
-}
-

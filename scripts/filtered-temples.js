@@ -118,6 +118,25 @@ const temples = [
 
 createTempleCards(temples);
 
+function filterTemplesByArea(minArea) {
+  return temples.filter(temple => temple.area >= minArea);
+}
+
+function filterTemplesByLocation(keyword) {
+  return temples.filter(temple =>
+    temple.location.toLowerCase().includes(keyword.toLowerCase())
+  );
+}
+
+function clearTempleCards() {
+  const gallery = document.querySelector(".gallery");
+  while (gallery.firstChild) {
+    gallery.removeChild(gallery.firstChild);
+  }
+}
+
+
+
 function createTempleCards(temples) {
   temples.forEach(temple => {
     let card = document.createElement("section");
@@ -145,5 +164,72 @@ function createTempleCards(temples) {
     card.appendChild(area);
 
     document.querySelector(".gallery").appendChild(card);
+  });
+}
+
+function getDedicatedYear(dedicatedStr) {
+  if (!dedicatedStr) return NaN;
+  const yearMatch = dedicatedStr.match(/^\s*(\d{3,4})/);
+  return yearMatch ? parseInt(yearMatch[1], 10) : NaN;
+}
+
+function handleFilter(key) {
+  let filtered = temples;
+  let title = "Home";
+  switch ((key || "").toString().toLowerCase()) {
+    case "old":
+      filtered = temples.filter(t => getDedicatedYear(t.dedicated) < 2000);
+      title = "Old Temples";
+      break;
+    case "new":
+      filtered = temples.filter(t => getDedicatedYear(t.dedicated) > 2000);
+      title = "New Temples";
+      break;
+    case "large":
+      filtered = temples.filter(t => t.area > 90000);
+      title = "Large Temples";
+      break;
+    case "small":
+      filtered = temples.filter(t => t.area < 10000);
+      title = "Small Temples";
+      break;
+    case "alberta":
+      filtered = filterTemplesByLocation("Alberta");
+      title = "Alberta Temples";
+      break;
+    case "home":
+      filtered = temples;
+      title = "Home";
+      break;
+    default:
+      filtered = temples;
+      break;
+  }
+  const heading = document.querySelector(".filter-name");
+  heading.textContent = title;
+  clearTempleCards();
+  createTempleCards(filtered);
+}
+
+// Attach listeners to navigation links
+const navLinks = document.querySelectorAll('.navigation li a');
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const text = link.textContent.trim();
+    handleFilter(text);
+    // close mobile nav if open
+    if (nav.classList.contains('show')) {
+      nav.classList.remove('show');
+      btn.textContent = '≡';
+    }
+  });
+});
+
+// Attach to select dropdown if present
+const selectFilter = document.querySelector('#filter');
+if (selectFilter) {
+  selectFilter.addEventListener('change', () => {
+    handleFilter(selectFilter.value);
   });
 }

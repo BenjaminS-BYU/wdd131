@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Techup — About</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techup - About</title>
   <link rel="stylesheet" href="styles/main.css">
   <script src="scripts/main.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="images/logo-placeholder.png" alt="Techup logo" class="logo" width="56" height="56">
+      <img src="images/techup-logo.jpg" alt="Techup Logo" class="logo" width="56" height="56">
       <h1>Techup</h1>
     </div>
 
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav class="main-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link active">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <button id="cartToggle" class="cart-btn" aria-expanded="false">Cart (<span id="cartCount">0</span>)</button>
     </nav>
   </header>
 
-  <main class="about-main">
+  <main>
     <section class="section">
-      <h2>About Techup</h2>
-      <p>Techup delivers professional IT and software services to individuals and businesses. We provide tailored software solutions, cloud and infrastructure consulting, and a curated retail selection of hardware and accessories that you can buy online for delivery or pick up in-store.</p>
+      <h2 class="page-title">About Techup</h2>
+      <p class="lead">
+        Techup is a modern software development studio focused on delivering high-quality apps,
+        tools, and digital products. We blend clean engineering with thoughtful design so businesses and
+        creators can launch with confidence.
+      </p>
+    </section>
 
-      <h3>How to hire us</h3>
-      <p>To engage Techup for software development: use the contact form on the Contact page, describe your project, and request a consultation. We'll respond within 2 business days to schedule an initial discovery session.</p>
+    <section class="section cards">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>
+          To make professional software development accessible, efficient, and reliable.
+          We focus on clarity, transparency, and long-term support.
+        </p>
+      </div>
 
-      <h3>Store & Pickup</h3>
-      <p>Visit the Home page to view our featured products. Items are available for delivery or in-store pickup. The cart is saved between sessions so you can add items now and checkout later.</p>
+      <div class="card">
+        <h3>What We Build</h3>
+        <p>
+          Web apps, mobile apps, custom tools, small business systems, and internal automation.
+          Every product is built with clean code and future-proof structure.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>How We Work</h3>
+        <p>
+          We follow a “build smart, build stable” philosophy. Each project begins with clear planning,
+          user-centered design, and an emphasis on maintainability.
+        </p>
+      </div>
     </section>
   </main>
 
@@ -42,9 +64,6 @@
         <p id="copyright"></p>
         <p id="lastModified"></p>
     </div>
-    <div class="footer-right">
-      <small>Pages: Home • About • Contact</small>
-    </div>
-  </footer>
+    </footer>
 </body>
 </html>

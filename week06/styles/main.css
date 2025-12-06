@@ -270,11 +270,11 @@ main {
   min-width: 350px;
   position: absolute;
   right: 1rem;
-  top: 6rem;
-  background: #fff;
+  bottom: 1rem;
+  background: var(--primary-dark);
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(2,6,23,0.12);
+  box-shadow: 0 100px 400px rgba(0, 0, 0, 0.12);
   z-index: 60;
 }
 
@@ -285,14 +285,20 @@ main {
 .cart-actions {
   min-width: 300px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 1rem;
   margin-top: .7rem;
 }
 
 #cartContents {
+  color: #fff;
   min-height: 60px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 
 .contact-form {
@@ -301,6 +307,16 @@ main {
   padding: 1.5rem;
   border-radius: var(--radius);
   box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+}
+
+.section.cards.profiles {
+  display: flex;
+  flex-direction: column;
+}
+
+.section.cards.profiles img{
+  padding: 1rem;
+  border-bottom: solid 1px;
 }
 
 
@@ -335,6 +351,7 @@ main {
   border-radius: 6px;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
+  max-width: 550px;
 }
 
 .site-footer {
@@ -354,15 +371,11 @@ iframe {
 }
 
 
-
-
-
-
-
 @media(min-width: 500px) {
   #menu {
      display: none;
   }
+
 
   .hero-copy {
     font-size: small;
@@ -374,8 +387,13 @@ iframe {
 
   .main-nav {
   display:flex;
-  align-items:center;
-  gap:.5rem;
+  background-color: none;
+  align-items: center;
+  gap: .5rem;
+  }
+
+  .show {
+    display: none;
   }
 
   .hero { 

@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Your cart is empty.');
         return;
       }
-      // In real site, proceed to payment. Here we clear cart and show confirmation.
+      // I am not doing a payment page yet... too hard hah
       saveCart([]);
       alert('Checkout complete — thank you for your purchase.');
       displayCart();

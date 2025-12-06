@@ -49,6 +49,22 @@ body {
   display: none;
 }
 
+.show {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--primary-dark);
+  height: 15%;
+}
+
+.show a {
+  color: #ffffff;
+}
+
 
 #menu {
     position: absolute;

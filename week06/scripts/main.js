@@ -2,6 +2,14 @@ const currentYear = new Date().getFullYear();
 document.getElementById("copyright").innerHTML = `&copy; ${currentYear} | Benjamin Strong | Canada`;
 document.getElementById("lastModified").innerHTML = `Last Modified: ${document.lastModified}`;
 
+const btn = document.getElementById("menu")
+const nav = document.querySelector(".main-nav")
+
+btn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+    btn.textContent = btn.textContent === "≡" ? "X" : "≡";
+});
+
 
 const products = [
   { id: 'p1', title: 'Mechanical Keyboard', desc: 'Compact 75% layout RGB', price: 129.99, img: 'https://ca.hyperx.com/cdn/shop/files/hyperx_alloy_origins_60_us_5_top_down_special_renamed_11.jpg?v=1763555868' },

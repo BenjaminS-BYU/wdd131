@@ -12,7 +12,6 @@ btn.addEventListener("click", () => {
     btn.textContent = btn.textContent === "≡" ? "X" : "≡";
 });
 
-// Optional: show last modified date in footer
 const lastModified = document.querySelector("#lastModified");
 lastModified.textContent = `Last Modified: ${document.lastModified}`;
 
